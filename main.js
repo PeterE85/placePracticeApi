@@ -9,7 +9,11 @@ fetch(url) //aki hacemos la peticion FETCH devuelve una promesa
     data.forEach(usuario => {
         //console.log(usuario.name)
         const parrafo = document.createElement('p');
+        parrafo.setAttribute('id', usuario.id);
         parrafo.innerHTML = usuario.name;
+        parrafo.addEventListener("click", function(){
+            window.location.href = `./usuario.html?id=${usuario.id}`
+        })
         aplication.appendChild(parrafo);
     });
 })
